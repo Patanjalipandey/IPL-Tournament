@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Team extends Player{
-    private String Tean_name,Ceo;
+    private String Tean_name,Ceo,track;
 
     Player player[] = new Player[20];
     int playercounter;

@@ -3,8 +3,12 @@ import java.util.Scanner;
 public class Tournament extends Team{
     private String name;
     private int year;
+    int Team_counter;
+
+    Team team[] = new Team[20];
     
     public Tournament() {
+        Team_counter = 0;
     }
 
     public Tournament(int p_id, String p_name, String tean_name, String ceo, String name, int year) {
@@ -30,17 +34,33 @@ public class Tournament extends Team{
     }
 
     public void read(){
-        super.read();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Tournament Name");
         setName(sc.next());
         System.out.println("Enter Tournament year");
         setYear(sc.nextInt());
     }
+    public void AddTeam(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no. of Team");
+        int not = sc.nextInt();
+        for(int i = 0; i<not;i++){
+            team[i] = new Team();
+            team[i].read();
+            team[i].addplayer();
+            Team_counter++;
+        }
+    }
+
+    public void display(){
+        System.out.println("Succesfully Created");
+    }
+
+
 
     @Override
     public String toString() {
-        return "Tournament [name=" + name + ", year=" + year + "]";
+        return super.toString() + "Tournament [name=" + name + ", year=" + year + "]";
     }
 
     

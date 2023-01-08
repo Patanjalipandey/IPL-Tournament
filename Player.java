@@ -34,6 +34,4 @@ public class Player {
     public String toString() {
         return "Player [p_id=" + p_id + ", p_name=" + p_name + "]";
     }
-
-    
 }
